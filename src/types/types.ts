@@ -1,1 +1,3 @@
-export type MovieArray = Array<object>
+export type MovieArray = Array<{
+  original_title: string
+}>
