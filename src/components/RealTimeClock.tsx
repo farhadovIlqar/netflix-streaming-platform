@@ -16,11 +16,9 @@ export default function RealTimeClock() {
   useEffect(() => {
     // 1. API-yə qoşuluruq
     const eventSource = new EventSource('/api/sse');
-    console.log(eventSource)
 
     // 2. Mesaj gələndə işə düşən funksiya
     eventSource.onmessage = (event) => {
-        console.log(event)
       try {
         const parsedData: SSEData = JSON.parse(event.data);
         setData(parsedData);
