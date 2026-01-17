@@ -9,6 +9,7 @@ export default function HomePage({ data }: { data: MovieArray }) {
           key={movie.id}
           poster_path={movie.poster_path}
           title={movie.title}
+          vote_average={movie.vote_average}
         />
       ))}
     </main>
