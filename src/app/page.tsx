@@ -1,8 +1,10 @@
-import { getNowPlaying } from "@/lib/GET"
-import HomePage from "../components/HomePage"
+import HomePage from "@/components/HomePage"
+import { Suspense } from "react"
 
 export default async function Home() {
-  const data = await getNowPlaying()
-  return <HomePage data={data} />
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomePage />
+    </Suspense>
+  )
 }
-
