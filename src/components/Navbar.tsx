@@ -2,6 +2,7 @@
 import clsx from "clsx"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import RealTimeClock from "./RealTimeViewer"
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -21,25 +22,26 @@ export default function Navbar() {
                 Home
               </Link>
               <Link
-                href="/recommended"
+                href="/popular"
                 className={clsx(
                   "text-foreground hover:bg-white hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                  { active: pathname === "/recommended" }
+                  { active: pathname === "/popular" }
                 )}
               >
                 Popular movies
               </Link>
               <Link
-                href="/top-movies"
+                href="/top-rated-movies"
                 className={clsx(
                   "text-foreground hover:bg-white hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                  { active: pathname === "/top-movies" }
+                  { active: pathname === "/top-rated-movies" }
                 )}
               >
                 Local Top 20
               </Link>
             </div>
           </div>
+          <RealTimeClock />
         </div>
       </div>
     </nav>
